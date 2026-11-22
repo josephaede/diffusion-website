@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentialité · Diffusion</title>
+<meta name="description" content="Politique de confidentialité de l'application macOS Diffusion.">
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--text:#1d1d1f;--muted:#5f6368;--line:#e3e3e0;--accent:#c2410c}
+@media (prefers-color-scheme:dark){:root{--bg:#141414;--card:#1e1e1e;--text:#ececec;--muted:#a1a1a1;--line:#333;--accent:#fb923c}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{border-bottom:1px solid var(--line);background:var(--card)}
+.bar{max-width:820px;margin:0 auto;padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
+nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:15px}
+nav a:first-child{margin-left:0}
+nav a[aria-current]{color:var(--accent);font-weight:600}
+main{max-width:820px;margin:0 auto;padding:32px 16px 48px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px}
+h2{font-size:20px;margin:32px 0 8px}
+h3{font-size:16px;margin:20px 0 4px}
+a{color:var(--accent)}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+code{font:14px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--line);padding:1px 5px;border-radius:4px;word-break:break-all}
+ul{padding-left:22px}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .bar{justify-content:center}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="brand" href="index.html">Diffusion</a>
+  <nav><a href="index.html">Accueil</a><a href="privacy.html" aria-current="page">Confidentialité</a><a href="terms.html">Conditions</a><a href="en/privacy.html" lang="en" hreflang="en">English</a></nav>
+</div></header>
+
+<main>
+  <h1>Politique de confidentialité</h1>
+  <p class="muted">En vigueur le 22 novembre 2026</p>
+
+  <div class="card">
+    <strong>En bref :</strong> Diffusion fonctionne entièrement sur votre Mac. L'application n'a pas de serveur. Elle échange des données uniquement avec les plateformes que vous connectez (Google/YouTube, TikTok, Meta). Elle n'utilise ni publicité, ni outil d'analyse, ni mesure d'audience, et ne vend ni ne partage vos données.
+  </div>
+
+  <h2>1. Responsable</h2>
+  <p>Diffusion est une application macOS personnelle éditée par Joseph (<a href="mailto:jojobabyfoot@gmail.com">jojobabyfoot@gmail.com</a>). Dans cette politique, « l'application » désigne Diffusion et « vous » désigne la personne qui l'utilise sur son Mac.</p>
+
+  <h2>2. Fonctionnement général</h2>
+  <p>Diffusion s'exécute localement sur macOS. Pour se connecter à un réseau, elle ouvre la page d'autorisation officielle de la plateforme dans votre navigateur. La plateforme renvoie ensuite un code d'autorisation à un petit serveur local temporaire, accessible uniquement sur votre Mac à l'adresse <code>http://localhost:8765/callback</code>. Ce serveur se ferme dès que le code est reçu, que la connexion est annulée, ou au bout de 5 minutes.</p>
+  <p>L'éditeur n'exploite aucun serveur : aucune donnée ne lui est transmise. Toutes les requêtes partent directement de votre Mac vers les API officielles des plateformes.</p>
+
+  <h2>3. Données traitées</h2>
+  <h3>YouTube (Google)</h3>
+  <p>Autorisations demandées : <code>youtube.upload</code>, <code>youtube</code> et <code>youtube.readonly</code>. Elles servent à :</p>
+  <ul>
+    <li>envoyer vos vidéos, leur miniature et leurs métadonnées (titre, description, mots-clés, catégorie, confidentialité, date de publication, playlist) ;</li>
+    <li>lire le nom de votre chaîne, le nombre d'abonnés, le nombre total de vues et la liste de vos playlists ;</li>
+    <li>lire vos 25 vidéos les plus récentes : titre, date, miniature, nombre de vues, de j'aime et de commentaires.</li>
+  </ul>
+
+  <h3>TikTok</h3>
+  <p>Autorisations demandées : <code>user.info.basic</code>, <code>user.info.profile</code>, <code>user.info.stats</code>, <code>video.list</code>, <code>video.publish</code> et <code>video.upload</code>. Elles servent à :</p>
+  <ul>
+    <li>lire votre nom affiché, votre nom d'utilisateur, votre photo de profil et les compteurs de votre profil (abonnés, abonnements, j'aime, nombre de vidéos) ;</li>
+    <li>lire les options de publication de votre compte (niveaux de confidentialité disponibles, durée maximale) ;</li>
+    <li>envoyer vos vidéos avec leur texte et les options choisies, en publication directe ou vers votre boîte de réception TikTok ;</li>
+    <li>lire vos 20 vidéos les plus récentes : titre, description, date, couverture, lien, vues, j'aime, commentaires et partages.</li>
+  </ul>
+
+  <h3>Instagram et Facebook (Meta)</h3>
+  <p>Autorisations demandées : <code>pages_show_list</code>, <code>pages_read_engagement</code>, <code>business_management</code>, <code>instagram_basic</code>, <code>instagram_content_publish</code>, <code>pages_manage_posts</code> et, facultativement, <code>read_insights</code> et <code>instagram_manage_insights</code>. Elles servent à :</p>
+  <ul>
+    <li>lister les Pages Facebook que vous gérez et le compte Instagram professionnel relié à chacune ;</li>
+    <li>connaître les autorisations que vous avez réellement accordées ;</li>
+    <li>publier vos vidéos en Reels sur Instagram et sur la Page Facebook choisie, avec leur texte et leurs options ;</li>
+    <li>lire le nom de la Page, le nom d'utilisateur Instagram et le nombre d'abonnés ;</li>
+    <li>lire vos 25 publications les plus récentes sur chaque réseau : texte, date, lien, miniature, j'aime, commentaires et, si l'autorisation est accordée, vues et partages.</li>
+  </ul>
+
+  <h3>Contenus que vous publiez</h3>
+  <p>Les vidéos, miniatures et textes que vous choisissez sont lus sur votre Mac, puis envoyés uniquement aux plateformes que vous cochez pour la publication.</p>
+
+  <h2>4. Stockage sur votre Mac</h2>
+  <ul>
+    <li><strong>Jetons et identifiants :</strong> les jetons d'accès et d'actualisation, ainsi que les identifiants des applications développeur que vous saisissez (ID et clés secrètes), sont enregistrés dans le trousseau macOS de votre session. Ils ne sont jamais écrits dans le fichier de données ci-dessous.</li>
+    <li><strong>Données de l'application :</strong> réglages, historique des publications, dernières statistiques récupérées, historique quotidien du nombre d'abonnés, brouillon en cours et préférences. Elles sont enregistrées dans le fichier <code>~/Library/Application Support/Diffusion/donnees.json</code>. Ce fichier n'est pas chiffré par l'application : il est protégé par les permissions de votre session macOS.</li>
+    <li>Les miniatures affichées dans les statistiques sont chargées depuis les serveurs des plateformes au moment de l'affichage.</li>
+    <li>Les notifications (fin d'envoi, erreur) sont des notifications locales de macOS.</li>
+  </ul>
+
+  <h2>5. Partage des données</h2>
+  <p>Vos données ne sont transmises qu'aux plateformes que vous connectez, et uniquement pour les usages décrits ci-dessus. Ces plateformes les traitent selon leurs propres règles de confidentialité : <a href="https://policies.google.com/privacy">Google</a>, <a href="https://www.tiktok.com/legal/privacy-policy">TikTok</a>, <a href="https://www.facebook.com/privacy/policy">Meta</a>.</p>
+  <p>L'application ne contient aucun outil de publicité, d'analyse, de mesure d'audience ni de rapport d'erreurs envoyé à des tiers. L'éditeur ne vend, ne loue et ne partage aucune donnée.</p>
+
+  <h2>6. Données des API Google</h2>
+  <p>L'utilisation et le transfert, par Diffusion, d'informations reçues des API Google respectent la <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, y compris ses exigences d'usage limité (« Limited Use »). Ces données servent uniquement aux fonctions décrites dans cette politique. Elles ne sont transférées à personne et ne servent ni à la publicité ni à l'entraînement de modèles d'intelligence artificielle.</p>
+
+  <h2>7. Conservation et suppression</h2>
+  <ul>
+    <li><strong>Déconnecter un réseau dans Diffusion</strong> (Comptes › Déconnecter) supprime ses jetons du trousseau et les statistiques enregistrées pour ce réseau.</li>
+    <li><strong>L'historique des publications et l'historique des abonnés</strong> sont conservés tant que vous ne supprimez pas le fichier <code>donnees.json</code>. Supprimer ce fichier et le dossier <code>~/Library/Application Support/Diffusion</code> efface toutes les données de l'application.</li>
+    <li><strong>Les identifiants d'application développeur</strong> restent dans le trousseau. Vous pouvez les supprimer avec l'app Trousseaux d'accès, en cherchant les éléments du service <code>fr.perso.diffusion</code>.</li>
+    <li><strong>Côté plateformes :</strong> la déconnexion dans Diffusion ne révoque pas l'accès auprès de la plateforme. Pour le révoquer :
+      <ul>
+        <li>Google : <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> ;</li>
+        <li>Facebook : Paramètres › Intégrations professionnelles ;</li>
+        <li>TikTok : les paramètres de sécurité de l'app, rubrique des applications autorisées.</li>
+      </ul>
+    </li>
+    <li>Les vidéos publiées restent sur les plateformes. Vous pouvez les supprimer depuis chaque plateforme.</li>
+  </ul>
+
+  <h2>8. Ce site web</h2>
+  <p>Ce site est hébergé par GitHub Pages. Il n'utilise ni cookies ni scripts de suivi. GitHub peut enregistrer des données techniques de connexion, comme l'adresse IP, selon sa <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité</a>.</p>
+
+  <h2>9. Vos droits</h2>
+  <p>Les données de l'application restent sur votre Mac : vous pouvez les consulter, les modifier ou les supprimer directement (voir la section 7). Pour toute question sur cette politique, écrivez à <a href="mailto:jojobabyfoot@gmail.com">jojobabyfoot@gmail.com</a>.</p>
+
+  <h2>10. Modifications</h2>
+  <p>Cette politique peut être mise à jour si le fonctionnement de l'application change. La date en haut de la page indique la dernière version.</p>
+</main>
+
+<footer><div class="bar">
+  <span>© 2026 Joseph · <a href="index.html">Accueil</a> · <a href="terms.html">Conditions d'utilisation</a></span>
+</div></footer>
+</body>
+</html>
